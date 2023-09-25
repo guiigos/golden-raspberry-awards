@@ -1,0 +1,13 @@
+[{
+  "key": "producer",
+  "value": "Producer"
+}, {
+  "key": "interval",
+  "value": "Interval"
+}, {
+  "key": "previousWin",
+  "value": "Previous Win"
+}, {
+  "key": "followingWin",
+  "value": "Following Win"
+}]
