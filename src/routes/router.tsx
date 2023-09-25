@@ -7,6 +7,7 @@ import {
 
 import Template from '../template';
 import Dashboard from '../pages/Dashboard';
+import List from '../pages/List';
 
 const Router: React.FC = (): React.ReactElement => (
   <BrowserRouter>
@@ -14,7 +15,7 @@ const Router: React.FC = (): React.ReactElement => (
       <Route path="/" element={<Navigate to="/dashboard" replace />} />
       <Route path="/" element={<Template />}>
         <Route index path="/dashboard" element={<Dashboard />} />
-        <Route path="/list" element={<span></span>} />
+        <Route path="/list" element={<List />} />
       </Route>
     </Routes>
   </BrowserRouter>
