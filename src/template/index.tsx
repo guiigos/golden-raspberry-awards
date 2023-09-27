@@ -1,7 +1,7 @@
-import React from 'react';
-import Header from './_header';
-import Aside from './_aside';
-import Main from './_main';
+import React from 'react'
+import Header from './_header'
+import Aside from './_aside'
+import Main from './_main'
 
 const Template: React.FC = (): React.ReactElement => (
   <div className="h-screen">
@@ -12,6 +12,6 @@ const Template: React.FC = (): React.ReactElement => (
       <Main />
     </div>
   </div>
-);
+)
 
-export default Template;
+export default Template

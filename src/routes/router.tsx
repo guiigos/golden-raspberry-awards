@@ -1,13 +1,8 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Navigate,
-} from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
-import Template from '../template';
-import Dashboard from '../pages/Dashboard';
-import List from '../pages/List';
+import Template from '../template'
+import Dashboard from '../pages/Dashboard'
+import List from '../pages/List'
 
 const Router: React.FC = (): React.ReactElement => (
   <BrowserRouter>
@@ -19,6 +14,6 @@ const Router: React.FC = (): React.ReactElement => (
       </Route>
     </Routes>
   </BrowserRouter>
-);
+)
 
-export default Router;
+export default Router
