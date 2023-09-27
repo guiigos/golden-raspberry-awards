@@ -19,12 +19,14 @@ const List: React.FC = (): React.ReactElement => {
   const handleYear = (event: React.KeyboardEvent) => {
     const value = (event.target as HTMLInputElement).value
     if (event.key === 'Enter') {
+      setPage(0)
       setYear(value)
     }
   }
 
   const handleWinner = (event: React.ChangeEvent) => {
     const value = Number((event.target as HTMLInputElement).value)
+    setPage(0)
     if (Number.isNaN(value)) {
       setWinner(undefined)
     } else {
