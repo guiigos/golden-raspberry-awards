@@ -26,7 +26,7 @@ describe('Pages :: Dashboard', () => {
     });
 
     expect(screen.getByText('List years with multiple winners')).toBeInTheDocument();
-    expect(screen.getByText('Top 3 studios with winner')).toBeInTheDocument();
+    expect(screen.getByText('Top 3 studios with winners')).toBeInTheDocument();
     expect(screen.getByText('Producers with longest and shortest interval between wins')).toBeInTheDocument();
     expect(screen.getByText('List movie winners by year')).toBeInTheDocument();
   });
