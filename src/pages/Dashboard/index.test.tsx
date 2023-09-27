@@ -9,7 +9,7 @@ describe('Pages :: Dashboard', () => {
     }));
 
     vi.mock('../../components/Table', () => ({
-      default: ({ children }: React.PropsWithChildren) => <div>{children}</div>
+      default: ({ title }: { title: [{ key: string, value: string }]}) => <div>{title.map(({ value, key }, index) => (<span key={`${key}-${index}`}>{value}</span>))}</div>
     }));
 
     vi.mock('../../services/server', () => ({
@@ -29,5 +29,15 @@ describe('Pages :: Dashboard', () => {
     expect(screen.getByText('Top 3 studios with winners')).toBeInTheDocument();
     expect(screen.getByText('Producers with longest and shortest interval between wins')).toBeInTheDocument();
     expect(screen.getByText('List movie winners by year')).toBeInTheDocument();
+
+    expect(screen.getAllByText('Year')).toHaveLength(2);
+    expect(screen.getAllByText('Win Count')).toHaveLength(2);
+    expect(screen.getAllByText('Name')).toHaveLength(1);
+    expect(screen.getAllByText('Producer')).toHaveLength(2);
+    expect(screen.getAllByText('Interval')).toHaveLength(2);
+    expect(screen.getAllByText('Previous Year')).toHaveLength(2);
+    expect(screen.getAllByText('Following Year')).toHaveLength(2);
+    expect(screen.getAllByText('Id')).toHaveLength(1);
+    expect(screen.getAllByText('Title')).toHaveLength(1);
   });
 });
