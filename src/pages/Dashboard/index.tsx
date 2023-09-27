@@ -27,7 +27,7 @@ const Dashboard: React.FC = () => {
         <Table title={titleMultipleWinners} data={multipleWinners} />
       </Card>
 
-      <Card title="Top 3 studios with winner">
+      <Card title="Top 3 studios with winners">
         <Table title={titleTopStudios} data={topStudios} />
       </Card>
 
