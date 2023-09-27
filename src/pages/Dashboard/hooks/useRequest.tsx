@@ -1,34 +1,34 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 import {
   getMultipleWinners,
   getTopStudios,
-  getProducersIntervalWin,
-} from '../../../services/server';
+  getProducersIntervalWin
+} from '../../../services/server'
 
 interface UseRequestResponse {
-  topStudios?: Domain.Studio[];
-  multipleWinners?: Domain.Year[];
-  interval?: Domain.Interval;
+  topStudios?: Domain.Studio[]
+  multipleWinners?: Domain.Year[]
+  interval?: Domain.Interval
 }
 
 const useRequest = (): UseRequestResponse => {
-  const [topStudios, setTopStudios] = useState<Domain.Studio[]>();
-  const [multipleWinners, setMultipleWinners] = useState<Domain.Year[]>();
-  const [interval, setInterval] = useState<Domain.Interval>();
+  const [topStudios, setTopStudios] = useState<Domain.Studio[]>()
+  const [multipleWinners, setMultipleWinners] = useState<Domain.Year[]>()
+  const [interval, setInterval] = useState<Domain.Interval>()
 
   useEffect(() => {
     Promise.all([
       getMultipleWinners(),
       getTopStudios(),
-      getProducersIntervalWin(),
+      getProducersIntervalWin()
     ]).then(([{ years }, { studios }, interval]) => {
-      setMultipleWinners(years);
-      setTopStudios(studios.sort((a, b) => b.winCount - a.winCount).slice(0, 3));
-      setInterval(interval);
-    });
-  }, []);
+      setMultipleWinners(years)
+      setTopStudios(studios.sort((a, b) => b.winCount - a.winCount).slice(0, 3))
+      setInterval(interval)
+    })
+  }, [])
 
-  return { topStudios, multipleWinners, interval };
+  return { topStudios, multipleWinners, interval }
 }
 
-export default useRequest;
+export default useRequest
