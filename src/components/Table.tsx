@@ -32,17 +32,6 @@ const Table: React.FC<Props> = ({
     )
   }
 
-  if (!data.length) {
-    return (
-      <div
-        className="flex items-center justify-center"
-        data-testid="test-empty"
-      >
-        <p className="text-gray-500">No data available</p>
-      </div>
-    )
-  }
-
   return (
     <table className="w-full">
       <thead>
@@ -62,6 +51,14 @@ const Table: React.FC<Props> = ({
       </thead>
 
       <tbody>
+        {!data.length && (
+          <tr data-testid="test-empty">
+            <td colSpan={title?.length} className="text-center text-gray-500">
+              No data available
+            </td>
+          </tr>
+        )}
+
         {data?.map((item, index) => (
           <tr key={index}>
             {title?.map(({ key }) => {
